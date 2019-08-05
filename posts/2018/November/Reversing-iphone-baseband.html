@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Post: Reverse Engineering the iPhone Baseband</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" type="text/css" href="../../../assets/css/icono.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../assets/css/simple-grid.css">
+    <link rel="stylesheet" type="text/css" href="../../../assets/css/luxbar.css">
+    <link rel="stylesheet" type="text/css" href="../../../assets/css/default.css">
+</head>
+<body>
+    <header id="luxbar" class="luxbar-fixed">
+        <input type="checkbox" class="luxbar-checkbox" id="luxbar-checkbox"/>
+        <div class="luxbar-menu luxbar-menu-right luxbar-menu-material-bluegrey">
+            <ul class="luxbar-navigation">
+                <li class="luxbar-header">
+                    <a href="../../../" class="luxbar-brand">KernelProgrammer</a>
+                    <label class="luxbar-hamburger luxbar-hamburger-doublespin" 
+                    id="luxbar-hamburger" for="luxbar-checkbox"> <span></span> </label>
+                </li>
+                <li class="luxbar-item"><a href="../../../">Home</a></li>
+                <li class="luxbar-item"><a href="../../../blog">Blog</a></li>
+                <li class="luxbar-item"><a href="../../../projects">Projects</a></li>
+                <li class="luxbar-item"><a href="../../../downloads">Downloads</a></li>
+                <li class="luxbar-item"><a href="../../../contact">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+    <main class="container">
+        <section class="row">
+            <article class="col-md-4">
+                <div>
+                    <br/>
+                    <br/>
+                    <img src='../../../media/images/default/baseband.jpg' alt='Qualcomm Baseband Chip'/>
+                    <h1>
+                        Reverse Engineering the iPhone Baseband<br/>
+                        <strong>
+                            <p>November, 2018</p>
+                        </strong>
+                    </h1>
+                    <h4>Introduction</h4>
+                    <p>
+                        I recently started a research project for examining and documenting, possibly exploiting the baseband used in older iOS devices.<br/>
+                        I believe the baseband is poorly documented as of current and because of that it is an interesting subject.<br/>
+                        My goal is to give a good insight in the operation and features of the baseband to guide security analysis.<br/>
+                        The baseband runs in it's own restricted and seperated environment but does have some breadcrumbs back to iOS as I call them, references and communication that makes iOS able to communicate with the baseband and the baseband able to communicate back.<br/>
+                        The documentation will be available on TheiPhoneWiki, a place where information about all things related to Apple's iOS devices is documented.
+                        <br/>
+                    </p>
+                    <h4>Hypothese</h4>
+                    <p>
+                        I think that the baseband has many vulnerabilities as it is proprietary and closed source.<br/>
+                        This means that only a select group of people review its logic and security and therefore chances are that security issues exist<br/>
+                        The baseband used in older iOS devices seems to be very outdated but still much liked and used in devices and therefore I am curious to see if it has modern mitigations against for example Spectre.<br/>
+                        I assume that the baseband has address space layout randomization but research still has to point that out.
+                        <br/>
+                    </p>
+                    <h4>Results</h4>
+                    <p>
+                        The results of this research are available and actively updated in the project page available on this site <a href="../../../projects/2018/Qualcomm-iPhone-Baseband-Research">Here</a><br/>
+                        Once the project has been finished it will be announced here.
+                        <br/>
+                    </p>
+                    <h4>Conclusion</h4>
+                    <p>
+                        ...<br/>
+                        <br/>
+                    </p>
+                    <br/>
+                    <section class='social-media'>
+                        <p>
+                            <strong>References</strong><br/>
+                            <a class="bubble-link" href="../../../projects/2018/Qualcomm-iPhone-Baseband-Research">
+                                <span class="bubble">
+                                    <b>On-Site</b> Project: Reversing iPhone Baseband
+                                </span>
+                            </a>
+                            <span class="bubble"><b>GitHub </b>Apple-Baseband-Research</span> <span class="bubble"><b>WWW </b>Qualcomm Documentation</span>
+                        </p>       
+                    </section>
+                </div>
+            </article>
+        </section>
+        <div class="col-12">
+            <a href="../../../blog">&lt; back to posts</a>
+        </div>
+    </main>
+    <footer>
+        <section>
+             <ul>
+                <li><a href="../../../privacypolicy">Privacy</a></li>
+                <li><a href="../../../terms-of-service">Terms of Service</a></li>
+                <li><a href="../../../security">Security</a></li>
+            </ul>
+        </section>
+    </footer>
+</body>
+</html>

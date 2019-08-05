@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Post: Apple XNU Kernel segment overflow</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" type="text/css" href="../../../assets/css/icono.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../assets/css/simple-grid.css">
+    <link rel="stylesheet" type="text/css" href="../../../assets/css/luxbar.css">
+    <link rel="stylesheet" type="text/css" href="../../../assets/css/default.css">
+</head>
+<body>
+    <header id="luxbar" class="luxbar-fixed">
+        <input type="checkbox" class="luxbar-checkbox" id="luxbar-checkbox"/>
+        <div class="luxbar-menu luxbar-menu-right luxbar-menu-material-bluegrey">
+            <ul class="luxbar-navigation">
+                <li class="luxbar-header">
+                    <a href="../../../" class="luxbar-brand">KernelProgrammer</a>
+                    <label class="luxbar-hamburger luxbar-hamburger-doublespin" 
+                    id="luxbar-hamburger" for="luxbar-checkbox"> <span></span> </label>
+                </li>
+                <li class="luxbar-item"><a href="../../../">Home</a></li>
+                <li class="luxbar-item"><a href="../../../blog">Blog</a></li>
+                <li class="luxbar-item"><a href="../../../projects">Projects</a></li>
+                <li class="luxbar-item"><a href="../../../downloads">Downloads</a></li>
+                <li class="luxbar-item"><a href="../../../contact">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+    <main class="container">
+        <section class="row">
+            <article class="col-md-4">
+                <div>
+                    <br/>
+                    <br/>
+                    <img src='../../../media/images/default/panic.png' alt='An example of an early panic dump.'/>
+                    <h1>
+                        Apple XNU Kernel segment overflow<br/>
+                        <strong>
+                            <p>April, 2019</p>
+                        </strong>
+                    </h1>
+                    <h4>Introduction</h4>
+                    <p>
+                        KernelTextRegion read-only is a security mitigation done by Apple to prevent patches to the kernel's critical parts.<br/>
+                        It protects the kernel's __TEXT segment where crucial parts, such as pagetables are located and also prevents system register access to fake pages.<br/>
+                        Well-known iOS hacker S1guza analyzed this mitigation a while ago and sadly I had to conclude that Apple did a great job with this mitigation to make it harder for people to bootstrap a secondary bootchain (kloader64) or create an extensive kernel debugger.<br/>
+                        However, as s1guza described in his write-up initialization flaws may lead to compromising the kernel text region before it is locked as read-only.<br/>
+                        In short, the kernel firstly starts building pagetables and then gives the entries segmentation with access rights.<br/>
+                        These access rights define whether the segment is readable, writeable, executable a combination of these rights or completely inaccessible.<br/>
+                        We know that accessing invalid memory or with improper access rights will result in a pagefault which the kernel will solve with a panic.<br/>
+                        We thus have two ways to attack the kernel's initialization:<br/>
+                        <ul>
+                            <li>By exploiting it to such an extend that we can modify the segmentation rights</li>
+                            <li>By exploiting it to such an extend that we can craft fake pages.</li>
+                            <li>By exploiting it to such an extend that the MMU is turned off, but thats going to be hard and unlikely.</li>
+                        </ul>
+                        <br/>
+                        We also know that XNU source code is publicly available and therefore we can pursuit two strategies to find a flaw suitable for one of the conditions above.<br/>
+                        We can either use American Fuzzy Lop or another fuzzer to fuzz the initialization or manually do static analysis on the kernel.<br/>
+                        Compiling XNU with AFL and then fuzzing it is going to be a massive time-loss.<br/>
+                        The question is if fuzzing will be a good idea at initialization stage because it is really a low-level close to hardware.<br/>
+                        Therefore I decided to go for static analysis.<br/>
+                        We know that the kernel holds one segment that is widely controllable to a certain extend: The stack.<br/>
+                        We also know that the stack must be initialized at some point during initialization.<br/>
+                        Therefore I decided to look at options to interact with stack initialization.<br/>
+                        Surprisingly I found an amazing flaw in the initialization that is easier to trigger than I could ever think.<br/>
+                        
+                    </p>
+                    <h4>Hypothese</h4>
+                    <p>
+                        ...<br/>
+                    </p>
+                    <h4>Results</h4>
+                    <p>
+                       A segment overflow exists in XNU early boot initialization as one can pass a boot-argument later used to calculate the kernel stack size.  
+                       However, this boot-argument is only treated by the bootloader on environments that have a less restrictive boot process.  
+                        <br/>
+                    </p>
+                    <h4>Conclusion</h4>
+                    <p>
+                        ...<br/>
+                        <br/>
+                    </p>
+                    <br/>
+                    <section class='social-media'>
+                        <p>
+                            <strong>References</strong><br/>
+                            <a class="bubble-link" href="https://github.com/UKERN-Developers/darwin-xnu" target="_blank">
+                                <span class="bubble">
+                                    <b>GitHub </b> Apple's Darwin XNU sourcecode
+                                </span>
+                            </a>
+                        </p>       
+                    </section>
+                </div>
+            </article>
+        </section>
+        <div class="col-12">
+            <a href="../../../blog">&lt; back to posts</a>
+        </div>
+    </main>
+    <footer>
+        <section>
+             <ul>
+                <li><a href="../../../privacypolicy">Privacy</a></li>
+                <li><a href="../../../terms-of-service">Terms of Service</a></li>
+                <li><a href="../../../security">Security</a></li>
+            </ul>
+        </section>
+    </footer>
+</body>
+</html>

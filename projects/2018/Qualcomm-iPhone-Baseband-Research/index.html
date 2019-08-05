@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Project: Qualcomm iPhone-Baseband Research</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" type="text/css" href="../../../assets/css/icono.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../assets/css/simple-grid.css">
+    <link rel="stylesheet" type="text/css" href="../../../assets/css/luxbar.css">
+    <link rel="stylesheet" type="text/css" href="../../../assets/css/default.css">
+</head>
+<body>
+    <header id="luxbar" class="luxbar-fixed">
+        <input type="checkbox" class="luxbar-checkbox" id="luxbar-checkbox"/>
+        <div class="luxbar-menu luxbar-menu-right luxbar-menu-material-bluegrey">
+            <ul class="luxbar-navigation">
+                <li class="luxbar-header">
+                    <a href="../../../" class="luxbar-brand">KernelProgrammer</a>
+                    <label class="luxbar-hamburger luxbar-hamburger-doublespin" 
+                    id="luxbar-hamburger" for="luxbar-checkbox"> <span></span> </label>
+                </li>
+                <li class="luxbar-item"><a href="../../../">Home</a></li>
+                <li class="luxbar-item"><a href="../../../blog">Blog</a></li>
+                <li class="luxbar-item"><a href="../../../projects">Projects</a></li>
+                <li class="luxbar-item"><a href="../../../downloads">Downloads</a></li>
+                <li class="luxbar-item"><a href="../../../contact">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+    <main class="container">
+        <section class="row">
+            <article class="col-md-4">
+                <br/>
+                <br/>
+                <img src='../../../media/images/default/baseband.jpg'/>
+                <h1>Qualcomm iPhone Baseband Research<br/><strong><p>November, 2018<p></strong></h1>
+                <h4>Introduction</h4>
+                <p>
+                    The iPhone comes with a built-in baseband chip for cellular network features.<br/>
+                    Since this chip is powered by a bootloader and operating system completely seperated from iOS and the baseband being poorly documented it is a great subject for research.<br/>
+                    There are two ways to research the baseband: One is by looking at firmware and the other way is to fuzz the baseband through OpeniBoot on a legacy (=old, iPhone3G etc.) device.<br/>
+                    This research is meant to cover both ways.
+                    <br/>
+                </p>
+                <h4>Goal</h4>
+                <p>
+                    The goal of this research is to learn more about the way the baseband is operating and communicating within the iPhone, to analyze the security of the baseband chip and to discover and document it's capabilities.<br/>
+                    Subjects that will be examined are defined as following:<br/>
+                    <ul>
+                        <li>How is firmware maintenance done on the baseband?</li>
+                        <li>How is the baseband firmware structured?</li>
+                        <li>How can one communicate with the baseband and what is possible through this communication?</li>
+                        <li>Does the baseband implement privilege seperation and if so, is it solid and secure?</li>
+                        <li>What are the hardware capabilities of the baseband and is the baseband debuggable?</li>
+                        <li>What can be done remotely in terms of communication and exploitation of the baseband?</li>
+                    </ul>
+                    <br/>
+                </p>
+                <h4>Research</h4>
+                <p>
+                    The starting point of the research is a firmware image of the baseband taken from the iPhone 4S for examining the firmware and an iPhone 3G with OpeniBoot for examining the communication.<br/>
+                    The vendor of the legacy baseband chips is Qualcomm and there is little documentation already available on TheiPhoneWiki about the baseband of legacy devices.<br/> 
+                    <br/>
+                </p>
+                <h4>Changelog</h4>
+                <p>
+                    <ul>
+                        <li>Extracted and examined the firmware with binwalk.</li>
+                        <li>Examined the baseband operating system image globally (strings)</li>
+                        <li>Wrote first entry and documentation on TheiPhoneWiki about the firmware.</li>
+                    </ul><br/>
+                    <br/>
+                </p>
+                <br/>
+                <section class='social-media'>
+                    <p>
+                        <strong>References</strong><br/>
+                        <a class="bubble-link" href="https://www.theiphonewiki.com/wiki/Baseband_Device" target="blank">
+                            <span class="bubble">
+                                <b>TheIphoneWiki</b> Baseband Device
+                            </span>
+                        </a>
+                        <span class="bubble"><b>GitHub </b>Apple-Baseband-Research</span> <span class="bubble"><b>WWW </b>Qualcomm Documentation</span>
+                    </p>       
+                </section>
+            </article>
+        </section>
+        <div class="col-12">
+            <a href="../../../projects">&lt; all projects</a>
+        </div>
+    </main>
+    <footer>
+        <section>
+             <ul>
+                <li><a href="../../../privacypolicy">Privacy</a></li>
+                <li><a href="../../../terms-of-service">Terms of Service</a></li>
+                <li><a href="../../../security">Security</a></li>
+            </ul>
+        </section>
+    </footer>
+</body>
+</html>
