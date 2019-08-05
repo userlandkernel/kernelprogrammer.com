@@ -1,0 +1,204 @@
+/*
+ * KernelProgrammer Style Documentent
+ * Created by Sem Voigtländer on November 24, 2018
+ * This code is licensed under the MIT License.
+ */
+
+*::selection {
+ background: #000000; /* black */
+ color: #FFFFFF; /* white */
+}
+
+*::-webkit-scrollbar {
+    width: 5px;
+}
+     
+*::-webkit-scrollbar-track {
+	-webkit-box-shadow: inset 0 0 2px rgba(0,0,0,0.3); /* black, 70% translucent */
+}
+     
+*::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  outline: 1px solid slategrey;
+}
+
+* {
+	font-family: 'SF Text Display', 'SF Text', 'Lucida sans', 'Monospace', 'Arial', sans-serif; 
+}
+
+html, body {
+	padding: 0;
+    margin: 0;
+}
+
+body {
+    font-size: 18px;
+    word-break: break-all;
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    -ms-hyphens: auto;
+    hyphens: auto;
+    word-wrap: break-word;
+}
+
+.pgp {
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    -ms-hyphens: none;
+    hyphens: none;
+}
+
+body header {
+	color: #FFFFFF; /* white */
+}
+
+.luxbar-brand, .luxbar-item {
+	color: #FFFFFF !important; /* white */
+}
+
+body main {
+	padding-top: 25px;
+	padding-bottom: 100px;
+}
+
+body main .row .col-12 {
+	margin-left: -2.5px;
+}
+
+body main .row .col-4{
+	margin-left: 2.4px;
+    min-height: 250px !important;
+    min-width: 250px !important;
+}
+
+body main .row .col-4 * {
+    text-overflow: ellipsis !important;
+    overflow: hidden;
+    white-space: pre-line;
+    min-width: 250px !important 100%;
+    height: 250px !important;
+    border-radius: 5px;
+    color: #FFFFFF; /* white */
+}
+
+body main .row .col-4 div {
+	padding: 7px;
+}
+
+body main * img {
+	max-width: 100%;
+}
+
+body footer {
+	position: fixed !important;
+	bottom: 0 !important;
+	width: 100%;
+}
+
+body footer * {
+	background: #333333 !important; /* grey */
+	color: #FFFFFF !important; /* white */
+	display: inline-block;
+
+}
+
+body footer section {
+	width: 100%;
+}
+
+body footer section ul li {
+	padding: 5px;
+}
+
+button {
+	background: #dfdfdf; /* silver-grey */
+    padding: 7px;
+    border:  none;
+    border-radius: 5px;
+    display: inline-block;
+    margin: 2px;
+    cursor: pointer;
+    outline-color: silver;
+}
+
+
+.modal .container input[type='checkbox']{
+    z-index: -1;
+    position: absolute;
+    display: none;
+    width: 100% !important;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background:  #263238;
+}
+
+.modal .container {
+	width: 100%;
+    height: 100%;
+    z-index: 100000000;
+    background: #263238;
+    margin:  0;
+    padding:  0;
+}
+
+.modal .container input:checked ~ .checkmark {
+	display: none !important;
+}
+
+.modal .container .checkmark {
+	position: fixed;
+	top: 0;
+	left: 0;
+	min-height: 100%;
+	width: 100%;
+	z-index: 10000000000000;
+	background: #263238;
+}
+
+.modal .checkmark {
+	cursor: pointer;
+}
+
+.modal .modal-body h1 {
+	font-size:  24px;
+}
+
+.modal .modal-body {
+	font-size: 12px;
+	margin: 12.49%;
+	cursor: pointer;
+	overflow-x:  hidden;
+	overflow-y: auto;
+}
+
+.modal .modal-body *{
+	color:  #FFFFFF;
+	cursor: pointer;
+}
+
+.modal .modal-body p {
+	font-size: 12px;
+}
+
+.bubble-link {
+    text-decoration: none;
+}
+
+.bubble {
+	background: #efefef; /* silver-grey */
+    padding: 7px;
+    border-radius: 5px;
+    display: inline-block;
+    margin: 2px;
+    max-width: 100%;
+    word-break: break-all;
+}
+
+.bubble button {
+	width: 100%;
+}
+
+.download {
+	width: 100%;
+}
