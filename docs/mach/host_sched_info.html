@@ -1,0 +1,67 @@
+<html>
+    <head>
+        <title>Documentation</title>
+        <meta name="author" content="Sem Voigtländer"/>
+        <meta name="description" content="KernelProgrammer - Information Security, Technology and development. Read research documents and follow 
+projects regarding modern technologies in the fields of development, technology and information security"/>
+        <meta name="keywords" content="information security, cyber, kernel, programmer, kernelprogrammer, kernelprogramming, technology, development, 
+webdevelopment, c, objective c, programming, coding, exploitation, escallatorium excelsior, security, cybersecurity, linux, c plus plus, privacy, tor, 
+blog, projects, research"/>
+        <meta name="apple-touch-icon" content="apple-touch-icon.png"/>
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <link rel="stylesheet" type="text/css" href="../../assets/css/icono.min.css">
+        <link rel="stylesheet" type="text/css" href="../../assets/css/simple-grid.min.css">
+        <link rel="stylesheet" type="text/css" href="../../assets/css/luxbar.css">
+        <link rel="stylesheet" type="text/css" href="../../assets/css/default.css">
+    </head>
+    <body>
+        <main class="container">
+            <section class="row">
+                <article class="col-md-4">
+                    <br/>
+<h2>host_sched_info</h2>
+<hr>
+<p>
+<strong>Structure</strong> - Used to present the set of scheduler limits associated
+  with the host.
+<h3>SYNOPSIS</h3>
+<pre>
+<strong>struct host_sched_info</strong>
+<strong>{</strong>
+       <strong>integer_t</strong>       <var>min_timeout</var><strong>;</strong>
+       <strong>integer_t</strong>       <var>min_quantum</var><strong>;</strong>
+<strong>};</strong>
+
+<strong>typedef struct host_sched_info* host_sched_info_t;</strong>
+</pre>
+<h3>FIELDS</h3>
+<dl>
+<dt> <var>min_timeout</var>
+<dd>
+Minimum time-out, in milliseconds
+<p>
+<dt> <var>min_quantum</var>
+<dd>
+Minimum quantum (period for which a thread can be scheduled if
+uninterrupted), in milliseconds
+</dl>
+<h3>DESCRIPTION</h3>
+<p>
+The <strong>host_sched_info</strong> structure defines the limiting
+scheduling information
+available about a host.
+<h3>RELATED INFORMATION</h3>
+<p>
+Functions:
+<a href="host_info.html"><strong>host_info</strong></a>.
+<p>
+Data Structures:
+<a href="host_basic_info.html"><strong>host_basic_info</strong></a>,
+<a href="host_load_info.html"><strong>host_load_info</strong></a>.
+		</article>
+            </section>
+        </main>
+    </body>
+</html>

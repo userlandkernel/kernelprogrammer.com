@@ -1,0 +1,96 @@
+<html>
+    <head>
+        <title>Documentation</title>
+        <meta name="author" content="Sem Voigtländer"/>
+        <meta name="description" content="KernelProgrammer - Information Security, Technology and development. Read research documents and follow 
+projects regarding modern technologies in the fields of development, technology and information security"/>
+        <meta name="keywords" content="information security, cyber, kernel, programmer, kernelprogrammer, kernelprogramming, technology, development, 
+webdevelopment, c, objective c, programming, coding, exploitation, escallatorium excelsior, security, cybersecurity, linux, c plus plus, privacy, tor, 
+blog, projects, research"/>
+        <meta name="apple-touch-icon" content="apple-touch-icon.png"/>
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <link rel="stylesheet" type="text/css" href="../../assets/css/icono.min.css">
+        <link rel="stylesheet" type="text/css" href="../../assets/css/simple-grid.min.css">
+        <link rel="stylesheet" type="text/css" href="../../assets/css/luxbar.css">
+        <link rel="stylesheet" type="text/css" href="../../assets/css/default.css">
+    </head>
+    <body>
+        <main class="container">
+            <section class="row">
+                <article class="col-md-4">
+                    <br/>
+<h2>clock_set_attributes</h2>
+<hr>
+<p>
+<strong>Function</strong> - Set a particular clock's attributes.
+<h3>SYNOPSIS</h3>
+<pre>
+<strong>kern_return_t   clock_set_attributes</strong>
+                <strong>(clock_ctrl_t</strong>                     <var>clock_control</var>,
+                 <strong>clock_flavor_t</strong>                          <var>flavor</var>,
+                 <strong>clock_attr_t</strong>                         <var>attribute</var>,
+                 <strong>clock_control</strong>                  <var>attribute_count</var><strong>);</strong>
+</pre>
+<h3>PARAMETERS</h3>
+<dl>
+<p>
+<dt> <var>clock_control</var> 
+<dd>
+[in clock-control send right]
+The control port for the clock.
+<p>
+<dt> <var>flavor</var> 
+<dd>
+[in scalar]
+Type of information to be set.  Defined values are:
+<dl>
+<p>
+<dt> <strong>CLOCK_ALARM_CURRES</strong>
+<dd>
+The resolution, in nanoseconds, at which clock alarm and 
+sleep timers are currently serviced.  Increasing the current
+resolution will have no impact on any pending clock alarms (i.e. 
+they will go off as originally scheduled).  Decreasing the
+current resolution will truncate any pending alarms to the
+granularity of the new current resolution.  This value must be a 
+multiple of the minimum resolution and not greater than the 
+maximum resolution of the clock.
+</dl>
+<p>
+<dt> <var>attribute</var> 
+<dd>
+[pointer to in scalar]
+New attribute.
+<p>
+<dt> <var>attribute_count</var> 
+<dd>
+[in scalar]
+The size of the buffer (in natural-sized units).
+</dl>
+<h3>DESCRIPTION</h3>
+<p>
+The <strong>clock_set_attributes</strong> function sets attributes of
+a clock's operation.
+<h3>NOTES</h3>
+<p>
+The main reason a clock's current resolution would not always equal its
+minimum resolution is because the overhead of sustaining the
+minimum resolution, 
+when it is not needed by any existing alarm service client, may be prohibitive 
+for a given hardware platform and underlying clock device.
+<h3>RETURN VALUES</h3>
+<p>
+Only generic errors apply.
+<h3>RELATED INFORMATION</h3>
+<p>
+Functions:
+<a href="host_get_clock_control.html"><strong>host_get_clock_control</strong></a>,
+<a href="clock_set_time.html"><strong>clock_set_time</strong></a>,
+<a href="clock_get_attributes.html"><strong>clock_get_attributes</strong></a>.
+		</article>
+            </section>
+        </main>
+    </body>
+</html>

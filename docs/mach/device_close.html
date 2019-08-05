@@ -1,0 +1,69 @@
+<html>
+    <head>
+        <title>Documentation</title>
+        <meta name="author" content="Sem Voigtländer"/>
+        <meta name="description" content="KernelProgrammer - Information Security, Technology and development. Read research documents and follow 
+projects regarding modern technologies in the fields of development, technology and information security"/>
+        <meta name="keywords" content="information security, cyber, kernel, programmer, kernelprogrammer, kernelprogramming, technology, development, 
+webdevelopment, c, objective c, programming, coding, exploitation, escallatorium excelsior, security, cybersecurity, linux, c plus plus, privacy, tor, 
+blog, projects, research"/>
+        <meta name="apple-touch-icon" content="apple-touch-icon.png"/>
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <link rel="stylesheet" type="text/css" href="../../assets/css/icono.min.css">
+        <link rel="stylesheet" type="text/css" href="../../assets/css/simple-grid.min.css">
+        <link rel="stylesheet" type="text/css" href="../../assets/css/luxbar.css">
+        <link rel="stylesheet" type="text/css" href="../../assets/css/default.css">
+    </head>
+    <body>
+        <main class="container">
+            <section class="row">
+                <article class="col-md-4">
+                    <br/>
+<h2>device_close</h2>
+<hr>
+<p>
+<strong>Function</strong> - De-establish a connection to a device.
+<h3>SYNOPSIS</h3>
+<pre>
+<strong>#include&lt device/device.h&gt</strong>
+
+<strong>kern_return_t	device_close</strong>
+		<strong>(mach_port_t</strong>	<var>device</var><strong>);</strong>
+</pre>
+<h3>PARAMETERS</h3>
+<dl>
+<p>
+<dt> <var>device</var> 
+<dd>
+[in device send right]
+A device port to the device to be closed.
+</dl>
+<h3>DESCRIPTION</h3>
+<p>
+The <strong>device_close</strong> function destroys the associated device
+port.  The open count 
+for the named device is decremented.  If this count reaches zero, the close
+operation of the device driver is invoked, closing the device.
+<h3>NOTES</h3>
+<p>
+<strong>device_close</strong> will destroy any mapped device windows
+obtained through this
+device port.
+<h3>RETURN VALUES</h3>
+<dl>
+<p>
+<dt> <strong>D_NO_SUCH_DEVICE</strong>
+<dd>
+No device with that name, or the device is not operational.
+</dl>
+<h3>RELATED INFORMATION</h3>
+<p>
+Functions:
+<a href="device_open.html"><strong>device_open</strong></a>.
+		</article>
+            </section>
+        </main>
+    </body>
+</html>

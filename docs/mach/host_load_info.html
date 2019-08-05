@@ -1,0 +1,75 @@
+<html>
+    <head>
+        <title>Documentation</title>
+        <meta name="author" content="Sem Voigtländer"/>
+        <meta name="description" content="KernelProgrammer - Information Security, Technology and development. Read research documents and follow 
+projects regarding modern technologies in the fields of development, technology and information security"/>
+        <meta name="keywords" content="information security, cyber, kernel, programmer, kernelprogrammer, kernelprogramming, technology, development, 
+webdevelopment, c, objective c, programming, coding, exploitation, escallatorium excelsior, security, cybersecurity, linux, c plus plus, privacy, tor, 
+blog, projects, research"/>
+        <meta name="apple-touch-icon" content="apple-touch-icon.png"/>
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <link rel="stylesheet" type="text/css" href="../../assets/css/icono.min.css">
+        <link rel="stylesheet" type="text/css" href="../../assets/css/simple-grid.min.css">
+        <link rel="stylesheet" type="text/css" href="../../assets/css/luxbar.css">
+        <link rel="stylesheet" type="text/css" href="../../assets/css/default.css">
+    </head>
+    <body>
+        <main class="container">
+            <section class="row">
+                <article class="col-md-4">
+                    <br/>
+<h2>host_load_info</h2>
+<hr>
+<p>
+<strong>Structure</strong> - Used to present a host's processor load information.
+<h3>SYNOPSIS</h3>
+<pre>
+<strong>#define CPU_STATE_USER     0</strong>
+
+<strong>#define CPU_STATE_SYSTEM   1</strong>
+
+<strong>#define CPU_STATE_IDLE     2</strong>
+
+<strong>struct host_load_info</strong>
+<strong>{</strong>
+       <strong>integer_t</strong>        <var>avenrun</var><strong>[3];</strong>
+       <strong>integer_t</strong>    <var>mach_factor</var><strong>[3];</strong>
+<strong>};</strong>
+
+<strong>typedef struct host_load_info* host_load_info_t;</strong>
+</pre>
+<h3>FIELDS</h3>
+<dl>
+<dt> <var>avenrun</var>
+<dd>
+load average--average number of runnable processes divided by
+number of CPUs
+<p>
+<dt> <var>mach_factor</var>
+<dd>
+The processing resources available to a new thread--the number of 
+CPUs divided by (1 + the number of threads)
+</dl>
+<h3>DESCRIPTION</h3>
+<p>
+The <strong>host_load_info</strong> structure defines the loading information
+available about a 
+host.  The information returned is exponential averages over three periods of 
+time: 5, 30 and 60 seconds.
+<h3>RELATED INFORMATION</h3>
+<p>
+Functions:
+<a href="host_statistics.html"><strong>host_statistics</strong></a>.
+<p>
+Data Structures:
+<a href="host_basic_info.html"><strong>host_basic_info</strong></a>,
+<a href="host_sched_info.html"><strong>host_sched_info</strong></a>.
+
+		</article>
+            </section>
+        </main>
+    </body>
+</html>

@@ -1,0 +1,74 @@
+<html>
+    <head>
+        <title>Documentation</title>
+        <meta name="author" content="Sem Voigtländer"/>
+        <meta name="description" content="KernelProgrammer - Information Security, Technology and development. Read research documents and follow 
+projects regarding modern technologies in the fields of development, technology and information security"/>
+        <meta name="keywords" content="information security, cyber, kernel, programmer, kernelprogrammer, kernelprogramming, technology, development, 
+webdevelopment, c, objective c, programming, coding, exploitation, escallatorium excelsior, security, cybersecurity, linux, c plus plus, privacy, tor, 
+blog, projects, research"/>
+        <meta name="apple-touch-icon" content="apple-touch-icon.png"/>
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <link rel="stylesheet" type="text/css" href="../../assets/css/icono.min.css">
+        <link rel="stylesheet" type="text/css" href="../../assets/css/simple-grid.min.css">
+        <link rel="stylesheet" type="text/css" href="../../assets/css/luxbar.css">
+        <link rel="stylesheet" type="text/css" href="../../assets/css/default.css">
+    </head>
+    <body>
+        <main class="container">
+            <section class="row">
+                <article class="col-md-4">
+                    <br/>
+<h2>host_processor_slots</h2>
+<hr>
+<p>
+<strong>Function</strong> - Return a list of numbers that map processor slots to active processors.
+<h3>SYNOPSIS</h3>
+<pre>
+<strong>kern_return_t   host_processor_slots</strong>
+                <strong>(host_t</strong>                                    <var>host</var>,
+                 <strong>processor_slot_t</strong>                         <var>slots</var>,
+                 <strong>host</strong>                                     <var>count</var><strong>);</strong>
+</pre>
+<h3>PARAMETERS</h3>
+<dl>
+<p>
+<dt> <var>host</var> 
+<dd>
+[in host-name send right]
+The name (or control) port for the host for 
+which information is to be obtained.
+<p>
+<dt> <var>slots</var> 
+<dd>
+[out array of <var>processor_slot_t</var>]
+An array of the processor slot numbers 
+for active processors.
+<p>
+<dt> <var>count</var> 
+<dd>
+[pointer to in/out scalar]
+On input, the maximum size of the slots
+buffer; on output, the number of returned slot numbers.
+</dl>
+<h3>DESCRIPTION</h3>
+<p>
+The <strong>host_processor_slots</strong> function returns an array
+of the processor slots
+defined for the host.
+<h3>RETURN VALUES</h3>
+<p>
+Only generic errors apply.
+<h3>RELATED INFORMATION</h3>
+<p>
+Functions:
+<a href="host_info.html"><strong>host_info</strong></a>,
+<a href="host_processors.html"><strong>host_processors</strong></a>,
+<a href="processor_info.html"><strong>processor_info</strong></a>.
+		</article>
+            </section>
+        </main>
+    </body>
+</html>
