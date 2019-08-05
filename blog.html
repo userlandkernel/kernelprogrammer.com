@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Blog</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" type="text/css" href="assets/css/icono.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/simple-grid.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/luxbar.css">
+    <style type="text/css">
+    *::-webkit-scrollbar {
+        width: 5px;
+    }
+     
+    *::-webkit-scrollbar-track {
+        -webkit-box-shadow: inset 0 0 2px rgba(0,0,0,0.3);
+    }
+     
+    *::-webkit-scrollbar-thumb {
+      background-color: darkgrey;
+      outline: 1px solid slategrey;
+    }
+    html {
+        padding: 0;
+        margin: 0;
+
+    }
+    body {
+       padding: 0;
+       margin: 0;
+    }
+
+    *{
+       font-family: 'SF Text Display', 'SF Text', 'Lucida sans', 'Monospace', 'Arial', sans-serif;
+    }
+
+        header, header * {
+            color: #FFFFFF;
+        }
+        main {
+            padding-top: 25px;
+            padding-bottom: 100px;
+        }
+        .bubble {
+            background: #efefef;
+            padding: 7px;
+            border-radius: 5px;
+            display: inline-block;
+            margin: 2px;
+        }
+        footer {
+            position: fixed !important;
+            bottom: 0 !important;
+            width: 100%;
+            padding-bottom: -50px;
+        }
+        footer * {
+            background: #333333 !important;
+            color: #fff;
+            display: inline-block;
+        }
+
+        footer section {
+            width: 100%;
+        }
+        footer section ul li {
+            padding: 5px;
+        }
+        main .row .col-4 {
+            margin-left: -2.5px;
+            min-height: 250px !important;
+            min-width: 250px !important;
+        }
+        main .row .col-4 * {
+            text-overflow: ellipsis !important;
+            overflow-y: auto;
+            overflow-x: hidden;
+            white-space: pre-line;
+
+            height: 250px !important;
+            min-width: 250px !important 100%;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <header id="luxbar" class="luxbar-fixed">
+        <input type="checkbox" class="luxbar-checkbox" id="luxbar-checkbox"/>
+        <div class="luxbar-menu luxbar-menu-right luxbar-menu-material-bluegrey">
+            <ul class="luxbar-navigation">
+                <li class="luxbar-header">
+                    <a href="./" class="luxbar-brand">KernelProgrammer</a>
+                    <label class="luxbar-hamburger luxbar-hamburger-doublespin" 
+                    id="luxbar-hamburger" for="luxbar-checkbox"> <span></span> </label>
+                </li>
+                <li class="luxbar-item"><a href="./">Home</a></li>
+                <li class="luxbar-item"><a href="projects">Projects</a></li>
+                <li class="luxbar-item"><a href="downloads">Downloads</a></li>
+                <li class="luxbar-item"><a href="contact">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+    <main class="container">
+        <section class="row">
+            <article class="col-12">
+                <br/>
+                <h1>Blog</h1>
+            </article>
+        </section>
+        <section class="row">
+            <div class="col-12">
+                <div class="bubble">
+                    <strong><sup>November, 2018</sup><br/>Reverse Engineering the iPhone Baseband </strong><br/>
+                        The iPhone Baseband is barely documented and runs seperately on a different chip inside the iPhone.<br/>
+                        <a href="posts/2018/November/Reversing-iphone-baseband.html">Read More</a>
+                </div>
+            </div>
+            <!--<div class="col-12">
+                <div class="bubble">
+                    <strong><sup>September 22, 2018</sup><br/>Uncovering bugs in property-list parsing</strong>
+                        Persistantly crashing the iPhone as result of type confusion in the property-list parser due to user controlled propertylists.<br/>
+                        <a href="post.html">Read More</a>     
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="bubble">
+                    <strong><sup>November 7, 2018</sup><br/>Creating a framework for unified mobile browser exploitation</strong>
+                        Writing a framework for bringing browser exploits together with algorithms for finding the perfect exploitation flow.<br/>
+                    <a href="post.html">Read More</a>
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="bubble">
+                    <strong><sup>April 5, 2018</sup><br/>Writing an XNU Kernel Fuzzer</strong>
+                    Finding lowlevel bugs in Operating Systems requires a massive amount of knowledge, but finding bugs can be easy with the right fuzzer.<br/>
+                    <a href="post.html">Read More</a>
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="bubble">
+                    <strong><sup>March 27, 2018</sup><br/>Importance of improving password policy </strong>
+                    How you can easily secure yourself from getting compromised through data breaches.<br/>
+                    <a href="post.html">Read More</a>
+                </div>
+            </div>
+            -->
+            <div class="col-12">
+                <div class="bubble">
+                    <strong><sup>April 10, 2019</sup><br/>XNU Segment Overflow</strong><br/>
+                    Persistently overflowing XNU stack segmentation in early boot.<br/>
+                    <a href="posts/2019/April/XNU-Segment-Overflow.html">Read More</a>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <section>
+             <ul>
+                <li><a href="privacypolicy">Privacy</a></li>
+                <li><a href="terms-of-service">Terms of Service</a></li>
+                <li><a href="security">Security</a></li>
+            </ul>
+        </section>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,6 @@
+Responsible disclosure
+One finding vulnerabilities should report the vulnerabilities following the most reasonable ethics responsible disclosure.
+Vulnerabilities will be patched within 90 days and one should only disclose them to security [at] kernelprogrammer [dot] com within this period of 90 days.
+After 90 days publications about the findings are permitted.
+In case of an unresponsible and untethical breach of any of the systems related to this domain legal steps may be taken.
+When reporting vulnerabilities as explained above an exception will be made and the reporter will be thanked.
