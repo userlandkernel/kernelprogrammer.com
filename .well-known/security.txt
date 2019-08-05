@@ -1,0 +1,6 @@
+Contact: security@kernelprogrammer.com
+Encryption: https://kernelprogrammer.com/media/documents/pubkey.asc
+Acknowledgments: https://kernelprogrammer.com/security
+Preferred-Languages: en, ru, de, nl
+Canonical: https://kernelprogrammer.com/.well-known/security.txt
+Policy: https://kernelprogrammer.com/security
