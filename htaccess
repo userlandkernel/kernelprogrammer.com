@@ -1,0 +1,74 @@
+## Disable directory listings ##
+Options -Indexes
+DirectoryIndex index.html /not-allowed.html
+##
+
+##-------Enforce HTTPS connection of a folder-------##
+RewriteEngine On
+RewriteCond %{HTTPS} !=on
+RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [R,L]
+##
+
+## ROUTES ##
+RewriteRule ^blog$ /blog.html [L]
+RewriteRule ^contact$ /contact.html [L]
+RewriteRule ^downloads$ /downloads.html [L]
+RewriteRule ^privacypolicy$ /privacypolicy.html [L]
+RewriteRule ^security$ /security.html [L]
+RewriteRule ^terms-of-service$ /terms-of-service.html [L]
+##
+
+## COMPRESSION ##
+AddOutputFilterByType DEFLATE image/jpeg
+AddOutputFilterByType DEFLATE image/png
+AddOutputFilterByType DEFLATE text/plain
+AddOutputFilterByType DEFLATE text/html
+AddOutputFilterByType DEFLATE text/xml
+AddOutputFilterByType DEFLATE text/css
+AddOutputFilterByType DEFLATE application/xml
+AddOutputFilterByType DEFLATE application/xhtml+xml
+AddOutputFilterByType DEFLATE application/rss+xml
+AddOutputFilterByType DEFLATE application/javascript
+AddOutputFilterByType DEFLATE application/x-javascript
+
+
+## HTST ##
+Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload" env=HTTPS 
+##
+
+## Content Security Policies ##
+Header always set Content-Security-Policy "default-src 'none'; script-src 'none'; object-src 'none'; style-src 'self' 'unsafe-inline'; img-src 'self'; media-src 'self'; frame-src 'none'; font-src 'self'; connect-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'"
+Header always set X-Content-Security-Policy "default-src 'none'; script-src 'none'; object-src 'none'; style-src 'self' 'unsafe-inline'; img-src 'self'; media-src 'self'; frame-src 'none'; font-src 'self'; connect-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'"
+Header always set X-WebKit-CSP "default-src 'none'; script-src 'none'; object-src 'none'; style-src 'self' 'unsafe-inline'; img-src 'self'; media-src 'self'; frame-src 'none'; font-src 'self'; connect-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'"
+##
+
+## ANTI XSS ##
+Header always set X-XSS-Protection "1; mode=block"
+##
+
+## ANTI SNIFFING ##
+Header always set X-Content-Type-Options "nosniff"
+##
+
+## ANTI FRAME CLOAKING ##
+Header always set X-Frame-Options "deny;"
+##
+
+## ACCESS CONTROL ##
+Header always set Access-Control-Allow-Origin "null"
+##
+
+## CHARSET ##
+Header always set Accept-Charset "utf-8"
+Header always set Accept-Language "utf-8"
+##
+
+## REFERRER ##
+Header always set Referrer-Policy "no-referrer"
+##
+
+## DISABLE CACHING ##
+Header always set Cache-Control "no-cache, no-store, must-revalidate"
+Header always set Pragma "no-cache"
+Header always set Expires 0
+##
